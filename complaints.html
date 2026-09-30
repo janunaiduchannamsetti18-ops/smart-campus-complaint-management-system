@@ -3,39 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complaints</title>
+    <title>Complaint Status</title>
+
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f6f8;
-            margin: 0;
         }
 
         header {
             background: #1f4e79;
             color: white;
-            padding: 20px;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background: #163a5c;
+            padding: 12px;
             text-align: center;
         }
 
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
         .container {
-            width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 30px auto;
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 10px;
         }
 
         .complaint {
             border: 1px solid #ddd;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 6px;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+
+        .complaint h3 {
+            color: #1f4e79;
         }
 
         .status {
             font-weight: bold;
+            padding: 8px;
+            display: inline-block;
+            border-radius: 5px;
+            background: #eee;
         }
     </style>
 </head>
@@ -43,28 +63,40 @@
 <body>
 
 <header>
-    <h1>Campus Complaints</h1>
+    <h1>Smart Campus Complaint Management System</h1>
+    <p>Complaint Status</p>
 </header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="complaints.html">Complaints</a>
+</nav>
 
 <div class="container">
 
-    <h2>Complaint Status</h2>
+    <h2>Submitted Complaints</h2>
 
     <div class="complaint">
-        <h3>Hostel Maintenance</h3>
-        <p>Water leakage in hostel room.</p>
+        <h3>Complaint #1001</h3>
+        <p><strong>Category:</strong> Hostel</p>
+        <p><strong>Description:</strong> Water leakage in hostel room.</p>
+        <p><strong>Date:</strong> 30 September 2026</p>
         <p class="status">Status: Pending</p>
     </div>
 
     <div class="complaint">
-        <h3>Classroom Maintenance</h3>
-        <p>Projector is not working.</p>
+        <h3>Complaint #1002</h3>
+        <p><strong>Category:</strong> Classroom</p>
+        <p><strong>Description:</strong> Projector is not working.</p>
+        <p><strong>Date:</strong> 30 September 2026</p>
         <p class="status">Status: In Progress</p>
     </div>
 
     <div class="complaint">
-        <h3>Library</h3>
-        <p>Request for additional study tables.</p>
+        <h3>Complaint #1003</h3>
+        <p><strong>Category:</strong> Library</p>
+        <p><strong>Description:</strong> Additional study tables required.</p>
+        <p><strong>Date:</strong> 30 September 2026</p>
         <p class="status">Status: Resolved</p>
     </div>
 

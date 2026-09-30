@@ -4,50 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Campus Complaint Management System</title>
+
     <style>
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f6f8;
-            margin: 0;
         }
 
         header {
             background: #1f4e79;
             color: white;
-            text-align: center;
             padding: 25px;
+            text-align: center;
+        }
+
+        nav {
+            background: #163a5c;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
         }
 
         .container {
-            width: 90%;
             max-width: 700px;
             margin: 30px auto;
             background: white;
             padding: 25px;
             border-radius: 10px;
+            box-shadow: 0 2px 8px #ccc;
         }
 
-        input, textarea, select, button {
+        h2 {
+            color: #1f4e79;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
             width: 100%;
-            padding: 12px;
-            margin: 8px 0 15px;
+            padding: 11px;
+            margin-top: 6px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
             background: #1f4e79;
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-        }
-
-        button:hover {
-            background: #163a5c;
+            font-size: 16px;
         }
 
         #message {
             margin-top: 15px;
+            text-align: center;
             font-weight: bold;
         }
     </style>
@@ -57,18 +83,27 @@
 
 <header>
     <h1>Smart Campus Complaint Management System</h1>
-    <p>Submit and manage campus complaints easily</p>
+    <p>Report and track campus complaints easily</p>
 </header>
 
+<nav>
+    <a href="index.html">Home</a>
+    <a href="complaints.html">Complaints</a>
+</nav>
+
 <div class="container">
-    <h2>Submit Complaint</h2>
+
+    <h2>Submit a Complaint</h2>
 
     <label>Student Name</label>
     <input type="text" id="studentName" placeholder="Enter your name">
 
+    <label>Student ID</label>
+    <input type="text" id="studentId" placeholder="Enter student ID">
+
     <label>Complaint Category</label>
     <select id="category">
-        <option value="">Select Category</option>
+        <option value="">Select category</option>
         <option>Hostel</option>
         <option>Classroom</option>
         <option>Library</option>
@@ -77,32 +112,40 @@
         <option>Other</option>
     </select>
 
-    <label>Complaint</label>
+    <label>Complaint Description</label>
     <textarea id="complaint" rows="5"
-        placeholder="Enter your complaint"></textarea>
+        placeholder="Describe your complaint"></textarea>
 
     <button onclick="submitComplaint()">Submit Complaint</button>
 
     <div id="message"></div>
+
 </div>
 
 <script>
 function submitComplaint() {
+
     const name = document.getElementById("studentName").value;
+    const studentId = document.getElementById("studentId").value;
     const category = document.getElementById("category").value;
     const complaint = document.getElementById("complaint").value;
+
     const message = document.getElementById("message");
 
-    if (name === "" || category === "" || complaint === "") {
+    if (name === "" || studentId === "" ||
+        category === "" || complaint === "") {
+
         message.style.color = "red";
-        message.innerText = "Please fill all fields.";
+        message.innerText = "Please fill all the fields.";
         return;
     }
 
     message.style.color = "green";
-    message.innerText = "Complaint submitted successfully!";
+    message.innerText =
+        "Complaint submitted successfully!";
 
     document.getElementById("studentName").value = "";
+    document.getElementById("studentId").value = "";
     document.getElementById("category").value = "";
     document.getElementById("complaint").value = "";
 }
