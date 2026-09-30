@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #1f4e79;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background: #163a5c;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: #1f4e79;
+            color: white;
+        }
+
+        select {
+            padding: 7px;
+        }
+
+        button {
+            padding: 7px 12px;
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Admin Dashboard</h1>
+    <p>Smart Campus Complaint Management System</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="complaints.html">Complaints</a>
+    <a href="admin.html">Admin</a>
+</nav>
+
+<div class="container">
+
+    <h2>Complaint Management</h2>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Student</th>
+            <th>Category</th>
+            <th>Complaint</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        <tr>
+            <td>1001</td>
+            <td>Student 1</td>
+            <td>Hostel</td>
+            <td>Water leakage</td>
+            <td>
+                <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option>Resolved</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="updateStatus()">Update</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>1002</td>
+            <td>Student 2</td>
+            <td>Classroom</td>
+            <td>Projector not working</td>
+            <td>
+                <select>
+                    <option>Pending</option>
+                    <option selected>In Progress</option>
+                    <option>Resolved</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="updateStatus()">Update</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>1003</td>
+            <td>Student 3</td>
+            <td>Library</td>
+            <td>More study tables required</td>
+            <td>
+                <select>
+                    <option>Pending</option>
+                    <option>In Progress</option>
+                    <option selected>Resolved</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="updateStatus()">Update</button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+function updateStatus() {
+    alert("Complaint status updated successfully!");
+}
+</script>
+
+</body>
+</html>
