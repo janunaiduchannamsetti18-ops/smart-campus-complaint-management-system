@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Campus Complaint Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        header {
+            background: #1f4e79;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 700px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background: #1f4e79;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #163a5c;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Smart Campus Complaint Management System</h1>
+    <p>Submit and manage campus complaints easily</p>
+</header>
+
+<div class="container">
+    <h2>Submit Complaint</h2>
+
+    <label>Student Name</label>
+    <input type="text" id="studentName" placeholder="Enter your name">
+
+    <label>Complaint Category</label>
+    <select id="category">
+        <option value="">Select Category</option>
+        <option>Hostel</option>
+        <option>Classroom</option>
+        <option>Library</option>
+        <option>Transport</option>
+        <option>Maintenance</option>
+        <option>Other</option>
+    </select>
+
+    <label>Complaint</label>
+    <textarea id="complaint" rows="5"
+        placeholder="Enter your complaint"></textarea>
+
+    <button onclick="submitComplaint()">Submit Complaint</button>
+
+    <div id="message"></div>
+</div>
+
+<script>
+function submitComplaint() {
+    const name = document.getElementById("studentName").value;
+    const category = document.getElementById("category").value;
+    const complaint = document.getElementById("complaint").value;
+    const message = document.getElementById("message");
+
+    if (name === "" || category === "" || complaint === "") {
+        message.style.color = "red";
+        message.innerText = "Please fill all fields.";
+        return;
+    }
+
+    message.style.color = "green";
+    message.innerText = "Complaint submitted successfully!";
+
+    document.getElementById("studentName").value = "";
+    document.getElementById("category").value = "";
+    document.getElementById("complaint").value = "";
+}
+</script>
+
+</body>
+</html>
